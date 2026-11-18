@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Waijai · Ingat</title>
+<style>
+  :root { --bg:#fbfaf7; --fg:#1f2421; --muted:#5b625d; --line:#dcdcd4; --accent:#5a6b2f; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161917; --fg:#e9ebe6; --muted:#a6ada7; --line:#30352f; --accent:#b5c77a; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 system-ui, -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif; }
+  main { max-width:44rem; margin:0 auto; padding:2rem 16px 4rem; }
+  h1 { font-size:1.6rem; margin:0 0 .25rem; } h2 { font-size:1.2rem; margin-top:2rem; }
+  .meta { color:var(--muted); margin:0 0 1.5rem; }
+  table { width:100%; border-collapse:collapse; font-size:.95rem; } th,td { text-align:left; vertical-align:top; padding:.5rem; border-top:1px solid var(--line); }
+  .wrap { overflow-x:auto; } a { color:var(--accent); } code { font-size:.9em; }
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy — Waijai · Ingat browser extension</h1>
+<p class="meta">Applies to the extension published on the Chrome Web Store, Microsoft Edge Add-ons and Firefox Add-ons.
+Last updated: <!--DATE-->2026-11-18<!--/DATE-->.</p>
+
+<h2>In short</h2>
+<ul>
+  <li><strong>We collect nothing.</strong> The extension makes no network requests. It has no server, no analytics and no tracking.</li>
+  <li><strong>It stores nothing.</strong> No browsing history, no list of checked links, no settings.</li>
+  <li><strong>It does not read web pages.</strong> It never sees what is written on any page you visit.</li>
+  <li>It looks at a web <em>address</em> only in the three moments described below.</li>
+</ul>
+
+<h2>When it looks at an address</h2>
+<div class="wrap"><table>
+<tr><th>When</th><th>What the extension sees</th><th>Kept?</th></tr>
+<tr><td>You click the toolbar button</td><td>The address of the current tab, for that click only. It is compared with a list built into the extension.</td><td>No — gone when the small window closes.</td></tr>
+<tr><td>You right-click a link and choose “Check this link”</td><td>The address of that link. It is checked inside the extension and the result is shown in a small window.</td><td>Only in memory, for at most 60 seconds.</td></tr>
+<tr><td>Your browser is about to open the download page of a remote-control app (for example AnyDesk or TeamViewer)</td><td>The browser itself sends you to the extension’s warning page instead. The extension is not told about any other page you visit.</td><td>Not by the extension. Your browser’s own history may record the warning page, just as it would have recorded the download page.</td></tr>
+</table></div>
+<p>If you press “I chose this myself — continue”, the extension lets <em>that one tab</em> open <em>that one address</em> once. This permission is removed after the page loads, or after about one minute at most.</p>
+
+<h2>What it never does</h2>
+<ul>
+  <li>No sending of data anywhere — the extension’s security policy blocks all network connections.</li>
+  <li>No storage of any kind.</li>
+  <li>No reading of page content, and no access to your browsing history.</li>
+  <li>No selling or sharing of data — there is no data.</li>
+</ul>
+
+<h2>Why the browser shows a permission warning</h2>
+<p>To show the warning page, the extension needs permission for the download sites of remote-control apps
+(including <code>github.com</code>, used only for RustDesk’s own download page). Your browser may describe this as
+permission to “read and change your data” on those sites. The extension has no code that reads those sites; it only
+asks the browser to redirect their download pages.</p>
+
+<h2>Good to know</h2>
+<ul>
+  <li>Because of that permission, the browser tells the extension when a tab on one of those sites (including github.com) finishes loading, with its address. The extension ignores these notices, except for the one tab where you pressed “continue” in the last minute. Nothing is kept or sent.</li>
+  <li>In Chrome, Edge and Brave, a website can detect that this extension is installed (because the warning page must be reachable). Nothing else is exposed.</li>
+  <li>The link check compares the address only. It cannot catch every scam. When in doubt, call the person or company back on a number you already know.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>Questions about privacy: <a href="mailto:kimril@pm.me">kimril@pm.me</a></p>
+</main>
+</body>
+</html>
